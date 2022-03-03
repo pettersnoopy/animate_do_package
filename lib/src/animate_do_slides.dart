@@ -15,7 +15,7 @@ class SlideInUp extends StatefulWidget {
   final bool manualTrigger;
   final bool animate;
   final double from;
-  final Curves curves;
+  final Curve curves;
 
   SlideInUp(
       {key,
@@ -105,7 +105,7 @@ class SlideInDown extends StatelessWidget {
   final bool manualTrigger;
   final bool animate;
   final double from;
-  final Curves curves;
+  final Curve curves;
 
   SlideInDown(
       {key,
@@ -153,7 +153,7 @@ class SlideInLeft extends StatefulWidget {
   final bool manualTrigger;
   final bool animate;
   final double from;
-  final Curves curves;
+  final Curve curves;
 
   SlideInLeft(
       {key,
@@ -243,7 +243,7 @@ class SlideInRight extends StatelessWidget {
   final bool manualTrigger;
   final bool animate;
   final double from;
-  final Curves curves;
+  final Curve curves;
 
   SlideInRight(
       {key,
