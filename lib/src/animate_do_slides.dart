@@ -15,6 +15,7 @@ class SlideInUp extends StatefulWidget {
   final bool manualTrigger;
   final bool animate;
   final double from;
+  final Curves curves;
 
   SlideInUp(
       {key,
@@ -24,6 +25,7 @@ class SlideInUp extends StatefulWidget {
       this.controller,
       this.manualTrigger = false,
       this.animate = true,
+      this.curves = Curves.easeOut,
       this.from = 100})
       : super(key: key) {
     if (manualTrigger == true && controller == null) {
@@ -58,7 +60,7 @@ class _SlideInUpState extends State<SlideInUp>
     controller = AnimationController(duration: widget.duration, vsync: this);
 
     animation = Tween<double>(begin: widget.from, end: 0)
-        .animate(CurvedAnimation(parent: controller!, curve: Curves.easeOut));
+        .animate(CurvedAnimation(parent: controller!, curve: this.curves));
 
     if (!widget.manualTrigger && widget.animate) {
       Future.delayed(widget.delay, () {
@@ -148,6 +150,7 @@ class SlideInLeft extends StatefulWidget {
   final bool manualTrigger;
   final bool animate;
   final double from;
+  final Curves curves;
 
   SlideInLeft(
       {key,
@@ -157,6 +160,7 @@ class SlideInLeft extends StatefulWidget {
       this.controller,
       this.manualTrigger = false,
       this.animate = true,
+      this.curves = Curves.easeOut,
       this.from = 100})
       : super(key: key) {
     if (manualTrigger == true && controller == null) {
@@ -191,7 +195,7 @@ class _SlideInLeftState extends State<SlideInLeft>
     controller = AnimationController(duration: widget.duration, vsync: this);
 
     animation = Tween<double>(begin: widget.from * -1, end: 0)
-        .animate(CurvedAnimation(parent: controller!, curve: Curves.easeOut));
+        .animate(CurvedAnimation(parent: controller!, curve: this.curves));
 
     if (!widget.manualTrigger && widget.animate) {
       Future.delayed(widget.delay, () {
