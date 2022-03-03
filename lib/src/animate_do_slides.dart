@@ -60,7 +60,7 @@ class _SlideInUpState extends State<SlideInUp>
     controller = AnimationController(duration: widget.duration, vsync: this);
 
     animation = Tween<double>(begin: widget.from, end: 0)
-        .animate(CurvedAnimation(parent: controller!, curve: this.curves));
+        .animate(CurvedAnimation(parent: controller!, curve: widget.curves));
 
     if (!widget.manualTrigger && widget.animate) {
       Future.delayed(widget.delay, () {
@@ -198,7 +198,7 @@ class _SlideInLeftState extends State<SlideInLeft>
     controller = AnimationController(duration: widget.duration, vsync: this);
 
     animation = Tween<double>(begin: widget.from * -1, end: 0)
-        .animate(CurvedAnimation(parent: controller!, curve: this.curves));
+        .animate(CurvedAnimation(parent: controller!, curve: widget.curves));
 
     if (!widget.manualTrigger && widget.animate) {
       Future.delayed(widget.delay, () {
