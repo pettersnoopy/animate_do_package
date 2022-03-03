@@ -105,6 +105,7 @@ class SlideInDown extends StatelessWidget {
   final bool manualTrigger;
   final bool animate;
   final double from;
+  final Curves curves;
 
   SlideInDown(
       {key,
@@ -114,6 +115,7 @@ class SlideInDown extends StatelessWidget {
       this.controller,
       this.manualTrigger = false,
       this.animate = true,
+      this.curves = Curves.easeOut,
       this.from = 100})
       : super(key: key) {
     if (manualTrigger == true && controller == null) {
@@ -132,6 +134,7 @@ class SlideInDown extends StatelessWidget {
         manualTrigger: manualTrigger,
         animate: animate,
         from: from * -1,
+        curves: curves,
       );
 }
 
@@ -240,6 +243,7 @@ class SlideInRight extends StatelessWidget {
   final bool manualTrigger;
   final bool animate;
   final double from;
+  final Curves curves;
 
   SlideInRight(
       {key,
@@ -249,6 +253,7 @@ class SlideInRight extends StatelessWidget {
       this.controller,
       this.manualTrigger = false,
       this.animate = true,
+      this.curves = Curves.easeOut,
       this.from = 100})
       : super(key: key) {
     if (manualTrigger == true && controller == null) {
@@ -267,5 +272,6 @@ class SlideInRight extends StatelessWidget {
         manualTrigger: manualTrigger,
         animate: animate,
         from: from * -1,
+        curves: curves,
       );
 }
